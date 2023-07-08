@@ -7,10 +7,13 @@ const inputs = document.querySelector(".inputs")
 
 let x = 1
 
-
+btn.addEventListener("click", () => {
+    
+    navigator.clipboard.writeText(px.value);
+})
 
 const div = document.createElement("div")
-document.body.insertBefore(div , inputs.nextElementSibling)
+document.body.insertBefore(div, inputs.nextElementSibling)
 div.style.cssText = `text-align: center;
 display: flex;
 justify-content: center;`
@@ -45,7 +48,7 @@ px.addEventListener("input", () => {
 })
 
 btn.addEventListener("click", () => {
-    rem.removeAttribute("disabled","")
+    rem.removeAttribute("disabled", "")
     rem.style.cursor = "copy"
     div.textContent = ""
     if (px.value.trim() == "") {
@@ -73,7 +76,7 @@ btn.addEventListener("click", () => {
 
 
 swap.addEventListener("click", () => {
-    rem.setAttribute("disabled","")
+    rem.setAttribute("disabled", "")
     rem.style.cursor = "not-allowed"
     px.value = ""
     rem.value = ""
@@ -141,16 +144,16 @@ px.addEventListener("input", () => {
     if (px.value == "") {
         rem.value = ""
         div.textContent = ""
-        rem.setAttribute("disabled","")
+        rem.setAttribute("disabled", "")
         rem.style.cursor = "not-allowed"
     }
 })
 
 
 
-rem.addEventListener("input" , ()=>{
-    if(rem.value == ""){
-        rem.setAttribute("disabled","")
+rem.addEventListener("input", () => {
+    if (rem.value == "") {
+        rem.setAttribute("disabled", "")
         rem.style.cursor = "not-allowed"
     }
 

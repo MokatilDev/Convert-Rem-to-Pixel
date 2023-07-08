@@ -73,6 +73,8 @@ btn.addEventListener("click", () => {
 
 
 swap.addEventListener("click", () => {
+    rem.setAttribute("disabled","")
+    rem.style.cursor = "not-allowed"
     px.value = ""
     rem.value = ""
     h1.textContent = "Convert Pixel to Rem :"
@@ -151,5 +153,5 @@ rem.addEventListener("input" , ()=>{
         rem.setAttribute("disabled","")
         rem.style.cursor = "not-allowed"
     }
-    
+
 })

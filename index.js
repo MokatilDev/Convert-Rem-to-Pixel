@@ -1,15 +1,19 @@
-const btn = document.querySelector("button")
+const btn = document.querySelector(".button1 button")
 const px = document.getElementById("px")
 const rem = document.getElementById("rem")
 const swap = document.querySelector(".swap")
 const h1 = document.querySelector("h1")
 const inputs = document.querySelector(".inputs")
+const copy = document.querySelector(".copyButton")
+const colorcopy = document.querySelector(".uil-copy-alt")
+
 
 let x = 1
 
-btn.addEventListener("click", () => {
-    
-    navigator.clipboard.writeText(px.value);
+copy.addEventListener("click", () => {
+    colorcopy.style.color = "#fff"
+    navigator.clipboard.writeText(rem.value);
+    copy.setAttribute("disabled", "")
 })
 
 const div = document.createElement("div")
@@ -44,12 +48,13 @@ px.addEventListener("input", () => {
         cursor: not-allowed;
         transition: all 0.3s;
     `
+        colorcopy.style.color = "#7a7474"
+        copy.setAttribute("disabled", "")
     }
 })
 
 btn.addEventListener("click", () => {
-    rem.removeAttribute("disabled", "")
-    rem.style.cursor = "copy"
+    copy.removeAttribute("disabled", "")
     div.textContent = ""
     if (px.value.trim() == "") {
         div.textContent = ""
@@ -63,6 +68,7 @@ btn.addEventListener("click", () => {
     }
     const px1 = px.value.trim()
     rem.value = px1 * 16 + " px"
+
     if (rem.value == "NaN px") {
         div.textContent = ""
         rem.value = "Enter Number"
@@ -76,6 +82,8 @@ btn.addEventListener("click", () => {
 
 
 swap.addEventListener("click", () => {
+    colorcopy.style.color = "#7a7474"
+    copy.setAttribute("disabled", "")
     rem.setAttribute("disabled", "")
     rem.style.cursor = "not-allowed"
     px.value = ""
@@ -144,17 +152,10 @@ px.addEventListener("input", () => {
     if (px.value == "") {
         rem.value = ""
         div.textContent = ""
-        rem.setAttribute("disabled", "")
-        rem.style.cursor = "not-allowed"
+
     }
 })
 
 
 
-rem.addEventListener("input", () => {
-    if (rem.value == "") {
-        rem.setAttribute("disabled", "")
-        rem.style.cursor = "not-allowed"
-    }
 
-})

@@ -77,7 +77,7 @@
         place-items: center;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 700px) {
         .inputs {
             display: flex;
             flex-direction: column;
@@ -88,16 +88,54 @@
         }
 
     }
+    .uil{
+        color: #7a7474;
+        font-size: 1.5rem;
+        cursor: not-allowed;
+        margin: 5px 20px;
+    }
+    .input__copy{
+        color: #7a7474;
+        background-color: #1C1C1C;
+        border: #3E3E3E solid 1px;
+        border-radius: 7px;
+        
+    }
 
-    
+    .input__copy input{
+        color: #ffffff;
+        background-color: #1C1C1C;
+        border: 0;
+        border-radius: 7px;
+        margin: 0;
+        width: 196px;
+    }
+    .copyButton{
+        color: #7a7474;
+        background-color: #1C1C1C;
+        border: 0;
+        border-radius: 7px;
+        outline: none;
+        padding: 0;
+        cursor: not-allowed;
+    }
+    #px{
+        width: 282px;
+        padding-block: 15px;
+    }
 </style>
 <body>
     
     <h1>Convert Rem to Pixel :</h1>
     <div class="inputs">
+        
         <input id="px" type="text" placeholder="Enter Rem">
         <span class="swap">⇄</span>
-        <input style="cursor: not-allowed;" id="rem" type="text" disabled placeholder="Value in Pixel">
+        <div class="input__copy">
+            <input style="cursor: not-allowed;" id="rem" type="text" disabled placeholder="Value in Pixel">
+            <button  disabled class="copyButton"  ><i class="uil uil-copy-alt"></i></button>
+        </div>
+        
     </div>
 
     <div class="button1">
